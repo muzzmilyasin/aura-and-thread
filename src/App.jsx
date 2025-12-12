@@ -25,7 +25,7 @@ function AppRoutes() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/aura-and-thread">
       <CartProvider>
         <Layout>
           <AppRoutes />
