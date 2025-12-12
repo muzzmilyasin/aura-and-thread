@@ -76,6 +76,35 @@ npm run build
 
 The build output will be in the `dist` folder.
 
+## 🚀 Deployment to GitHub Pages
+
+This project is configured to automatically deploy to GitHub Pages using GitHub Actions.
+
+### Steps:
+
+1. **Push your code to GitHub**
+```bash
+git add .
+git commit -m "Initial commit"
+git push origin main
+```
+
+2. **Enable GitHub Pages**
+   - Go to your repository on GitHub
+   - Click on **Settings** → **Pages**
+   - Under **Source**, select **GitHub Actions**
+
+3. **Automatic Deployment**
+   - The workflow will automatically run on every push to `main`
+   - Your site will be available at: `https://muzzmilyasin.github.io/aura-and-thread/`
+
+### Manual Build (Optional)
+```bash
+npm run build
+npm run preview
+```
+
+
 ## 📁 Project Structure
 
 ```
