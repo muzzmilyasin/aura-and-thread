@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
     const navigate = useNavigate();
-    // Mock data for featured collection
+
     const featured = [
         {
             id: 1,
@@ -27,32 +27,78 @@ export default function Home() {
 
     return (
         <div className="flex flex-col">
-            {/* Hero Section */}
-            <section className="relative h-[80vh] w-full overflow-hidden">
+            {/* Hero Section - Single Image with Smooth Animation */}
+            <section className="relative min-h-screen w-full overflow-hidden">
+                {/* Animated Background Image */}
                 <div className="absolute inset-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2070&auto=format&fit=crop"
-                        alt="Hero Background"
-                        className="h-full w-full object-cover object-center"
-                    />
-                    <div className="absolute inset-0 bg-black/20" />
+                    <div className="absolute inset-0 animate-ken-burns">
+                        <img
+                            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=2000&auto=format&fit=crop&q=80"
+                            alt="Fashion Collection"
+                            className="h-full w-full object-cover"
+                        />
+                    </div>
+                    {/* Gradient Overlays for Depth */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
 
-                <div className="relative h-full flex items-center justify-center text-center px-4">
-                    <div className="max-w-3xl space-y-6">
-                        <h1 className="text-4xl md:text-6xl lb:text-7xl font-serif text-white tracking-wide">
-                            Timeless Essentials
-                        </h1>
-                        <p className="text-lg md:text-xl text-white/90 font-light tracking-wider max-w-xl mx-auto">
-                            Elevate your everyday with sustainable luxury and minimalist design.
-                        </p>
-                        <div className="pt-4">
-                            <button
-                                onClick={() => navigate('/shop')}
-                                className="bg-white text-primary px-8 py-3 text-sm uppercase tracking-widest font-medium hover:bg-background transition-colors duration-300"
-                            >
-                                Shop Now
-                            </button>
+                {/* Content */}
+                <div className="relative min-h-screen flex items-center">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                        <div className="max-w-2xl space-y-8 animate-fade-in">
+                            {/* Accent Line with Animation */}
+                            <div className="w-20 h-0.5 bg-accent animate-expand-width" />
+
+                            {/* Main Heading */}
+                            <div className="space-y-6">
+                                <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-tight">
+                                    Timeless
+                                    <span className="block text-white/90 italic mt-2">Elegance</span>
+                                </h1>
+                                <p className="text-xl md:text-2xl text-white/80 font-light leading-relaxed max-w-xl">
+                                    Where sustainable luxury meets minimalist design. Curated pieces that transcend seasons.
+                                </p>
+                            </div>
+
+                            {/* Stats - Subtle Animation */}
+                            <div className="flex gap-12 py-6 border-t border-white/20">
+                                <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                                    <p className="text-4xl font-serif text-white">100%</p>
+                                    <p className="text-sm text-white/60 mt-1 uppercase tracking-wider">Sustainable</p>
+                                </div>
+                                <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                                    <p className="text-4xl font-serif text-white">8+</p>
+                                    <p className="text-sm text-white/60 mt-1 uppercase tracking-wider">Collections</p>
+                                </div>
+                                <div className="animate-slide-up" style={{ animationDelay: '0.6s' }}>
+                                    <p className="text-4xl font-serif text-white">2025</p>
+                                    <p className="text-sm text-white/60 mt-1 uppercase tracking-wider">Est.</p>
+                                </div>
+                            </div>
+
+                            {/* CTA Buttons */}
+                            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                                <button
+                                    onClick={() => navigate('/shop')}
+                                    className="group relative bg-white text-primary px-10 py-5 text-sm uppercase tracking-widest font-medium overflow-hidden transition-all duration-500 hover:bg-accent hover:text-white"
+                                >
+                                    <span className="relative z-10">Explore Collection</span>
+                                    <div className="absolute inset-0 bg-accent transform translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                                </button>
+                                <button
+                                    onClick={() => navigate('/about')}
+                                    className="border-2 border-white text-white px-10 py-5 text-sm uppercase tracking-widest font-medium hover:bg-white hover:text-primary transition-all duration-300"
+                                >
+                                    Our Story
+                                </button>
+                            </div>
+
+                            {/* Scroll Indicator */}
+                            <div className="hidden md:flex items-center gap-3 pt-12 text-white/60 animate-bounce-slow">
+                                <div className="w-px h-16 bg-white/40" />
+                                <span className="text-xs uppercase tracking-widest">Scroll to discover</span>
+                            </div>
                         </div>
                     </div>
                 </div>
